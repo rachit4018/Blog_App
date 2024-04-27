@@ -6,5 +6,6 @@
     <p>{{post.text}}</p>
 </div>
 
-    <a href="{% url 'post_update' post.pk %}">EDIT BLOG</a>
+    <a href="{% url 'post_update' post.pk %}">+ EDIT BLOG</a> <br>
+    <a href="{% url 'post_delete' post.pk %}">- DELETE BLOG</a>
 {% endblock content %}
