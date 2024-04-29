@@ -14,8 +14,13 @@ rel="stylesheet">
             <div class="nav-right">
                 <h1><a href="{% url 'post_new' %}">+ New Blog Post</a></h1>
             </div>
-
         </header>
+        {% if user.is_authenticated %}
+                <p> Hi, {{ user.username }}</p>
+                <a href="{% url 'login' %}">Logout</a>
+            {% else %}
+                <a href="{%url 'login' %}">Please LOGIN</a>
+            {% endif %}
         <div>
             {% block content %}
             {% endblock content %}
